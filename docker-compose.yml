@@ -1,0 +1,48 @@
+version: "3.7"
+
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: docker/app/Dockerfile
+    image: vntu-app
+    container_name: vntu-app
+    restart: unless-stopped
+    working_dir: /var/www/
+    ports:
+        - 5173:5173
+    volumes:
+      - ./:/var/www
+    networks:
+      - vntu
+
+  db:
+    image: mysql:5.7
+    platform: linux/x86_64
+    container_name: vntu-db
+    restart: unless-stopped
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+    networks:
+      - vntu
+
+  nginx:
+    image: nginx:alpine
+    container_name: vntu-nginx
+    restart: unless-stopped
+    ports:
+      - 80:80
+    volumes:
+      - ./:/var/www
+      - ./docker/nginx:/etc/nginx/conf.d/
+    networks:
+      - vntu
+
+networks:
+  vntu:
+    driver: bridge
