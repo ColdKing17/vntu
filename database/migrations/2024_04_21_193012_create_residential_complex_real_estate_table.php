@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('real_estate_address');
 
             $table->primary(['residential_complex_name', 'real_estate_address']);
+            $table->foreign('residential_complex_name')->references('name')->on('residential_complexes');
+            $table->foreign('real_estate_address')->references('address')->on('real_estates');
         });
     }
 
