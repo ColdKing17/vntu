@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DepartmentAdvertisingCampaignSeeder extends Seeder
 {
@@ -12,6 +13,31 @@ class DepartmentAdvertisingCampaignSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        DB::table('department_advertising_campaign')->insert([
+            [
+                'department_name' => 'Комерційний',
+                'advertising_campaign_name' => '1+1=3'
+            ],
+            [
+                'department_name' => 'Комерційний',
+                'advertising_campaign_name' => 'Знижка 10%'
+            ],
+            [
+                'department_name' => 'Юридичний',
+                'advertising_campaign_name' => 'Нерухомість легко'
+            ],
+            [
+                'department_name' => 'Юридичний',
+                'advertising_campaign_name' => '1+1=3'
+            ],
+            [
+                'department_name' => 'Консалтинговий',
+                'advertising_campaign_name' => 'Нерухомість легко'
+            ],
+            [
+                'department_name' => 'Консалтинговий',
+                'advertising_campaign_name' => 'Знижка 10%'
+            ],
+        ]);
     }
 }

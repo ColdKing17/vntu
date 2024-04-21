@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('requests', function (Blueprint $table) {
             $table->string('requirements');
-            $table->unsignedFloat('budget');
+            $table->unsignedDouble('budget');
             $table->date('date');
             $table->string('property_type');
 

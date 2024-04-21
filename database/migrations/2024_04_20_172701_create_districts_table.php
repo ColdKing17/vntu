@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('districts', function (Blueprint $table) {
             $table->string('name');
             $table->text('description');
-            $table->unsignedFloat('rating');
-            $table->unsignedFloat('area');
+            $table->unsignedDouble('rating');
+            $table->unsignedDouble('area');
 
             $table->primary('name');
         });

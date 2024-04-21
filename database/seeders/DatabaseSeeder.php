@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
             DistrictCitySeeder::class,
             ResidentialComplexRealEstateSeeder::class,
             RealtorDepartmentServiceSeeder::class,
-            PaymentRealEstateSeeder::class,
+            PaymentRequestSeeder::class,
         ]);
     }
 }

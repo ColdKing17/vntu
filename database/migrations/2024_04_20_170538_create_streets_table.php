@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('streets', function (Blueprint $table) {
             $table->string('name');
-            $table->unsignedFloat('length');
+            $table->unsignedDouble('length');
             $table->string('road_surface');
             $table->string('type_of_building');
 

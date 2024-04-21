@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('advertising_campaigns', function (Blueprint $table) {
             $table->string('name');
-            $table->unsignedFloat('budget');
+            $table->unsignedDouble('budget');
             $table->date('date');
             $table->string('target_audience');
-            $table->unsignedFloat('conversion');
+            $table->unsignedDouble('conversion');
 
             $table->primary('name');
         });

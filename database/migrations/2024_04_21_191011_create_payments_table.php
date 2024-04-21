@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('payments', function (Blueprint $table) {
-            $table->unsignedFloat('amount');
+            $table->unsignedDouble('amount');
             $table->date('date');
             $table->string('payment_method');
             $table->string('client_full_name');

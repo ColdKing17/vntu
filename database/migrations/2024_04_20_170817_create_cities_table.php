@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('cities', function (Blueprint $table) {
             $table->string('name');
             $table->text('description');
-            $table->unsignedFloat('area');
+            $table->unsignedDouble('area');
             $table->unsignedInteger('population');
             $table->date('date_of_establishment');
 

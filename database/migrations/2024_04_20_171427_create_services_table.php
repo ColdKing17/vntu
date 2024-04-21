@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->string('name');
             $table->text('description');
-            $table->unsignedFloat('price');
+            $table->unsignedDouble('price');
             $table->string('term_of_provision');
 
             $table->primary('name');

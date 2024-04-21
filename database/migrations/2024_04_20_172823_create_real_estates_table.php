@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('real_estates', function (Blueprint $table) {
             $table->string('address');
             $table->string('type');
-            $table->unsignedFloat('price');
-            $table->string('residential_complex_name');
+            $table->unsignedDouble('price');
+            $table->string('residential_complex_name')->nullable();
             $table->string('district_name');
 
             $table->primary(['address', 'type']);
