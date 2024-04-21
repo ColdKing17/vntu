@@ -11,15 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('real_estates', function (Blueprint $table) {
-            $table->string('address');
-            $table->string('type');
-            $table->unsignedFloat('price');
-            $table->string('residential_complex_name');
+        Schema::create('district_city', function (Blueprint $table) {
             $table->string('district_name');
+            $table->string('city_name');
 
-            $table->primary(['address', 'type']);
-            $table->foreign('residential_complex_name')->references('name')->on('residential_complexes');
+            $table->primary(['city_name', 'district_name']);
+            $table->foreign('city_name')->references('name')->on('cities');
             $table->foreign('district_name')->references('name')->on('districts');
         });
     }
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('real_estates');
+        Schema::dropIfExists('district_city');
     }
 };
