@@ -26,12 +26,12 @@ class PaymentRequestSeeder extends Seeder
             ],
             [
                 'request_requirements' => 'Купити квартиру за 2 000 000 грн',
-                'payment_date' => '2023-09-18',
+                'payment_date' => '2023-04-27',
                 'client_full_name' => 'Сидоренко Андрій Васильович'
             ],
             [
                 'request_requirements' => 'Купити квартиру за 2 000 000 грн',
-                'payment_date' => '2023-09-18',
+                'payment_date' => '2023-04-27',
                 'client_full_name' => 'Ковальчук Марина Ігорівна'
             ]
         ]);

@@ -29,20 +29,6 @@ class PaymentSeeder extends Seeder
                 'real_estate_address' => 'вул. Зелена, буд. 14, кв. 20, м. Дніпро'
             ],
             [
-                'amount' => 200000,
-                'date' => '2023-09-18',
-                'payment_method' => 'Visa',
-                'client_full_name' => 'Сидоренко Андрій Васильович',
-                'real_estate_address' => 'просп. Героїв, буд. 33, кв. 8, м. Одеса'
-            ],
-            [
-                'amount' => 200000,
-                'date' => '2023-09-18',
-                'payment_method' => 'Visa',
-                'client_full_name' => 'Ковальчук Марина Ігорівна',
-                'real_estate_address' => 'просп. Героїв, буд. 33, кв. 8, м. Одеса'
-            ],
-            [
                 'amount' => 500000,
                 'date' => '2024-02-05',
                 'payment_method' => 'Mastercard',

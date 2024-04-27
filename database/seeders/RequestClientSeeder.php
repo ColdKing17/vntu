@@ -25,19 +25,7 @@ class RequestClientSeeder extends Seeder
             [
                 'client_full_name' => 'Сидоренко Андрій Васильович',
                 'request_requirements' => 'Купити квартиру за 2 000 000 грн'
-            ],
-            [
-                'client_full_name' => 'Сидоренко Андрій Васильович',
-                'request_requirements' => 'Купити квартиру за 1 500 000 грн'
-            ],
-            [
-                'client_full_name' => 'Ковальчук Марина Ігорівна',
-                'request_requirements' => 'Купити земельну ділянку за 500 000 євро'
-            ],
-            [
-                'client_full_name' => 'Ковальчук Марина Ігорівна',
-                'request_requirements' => 'Зняти будинок в центрі за 20 000 грн на місяць'
-            ],
+            ]
         ]);
     }
 }

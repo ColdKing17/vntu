@@ -15,27 +15,27 @@ class RequestRealtorSeeder extends Seeder
     {
         DB::table('request_realtor')->insert([
             [
-                'realtor_full_name' => 'Ковальова Вікторія Миколаївна',
+                'realtor_full_name' => 'Кузьменко Валерій Олександрович',
                 'request_requirements' => 'Купити будинок за 3 000 000 грн'
             ],
             [
-                'realtor_full_name' => 'Лисенко Олексій Іванович',
+                'realtor_full_name' => 'Петренко Наталія Василівна',
                 'request_requirements' => 'Зняти офіс в бізнес-центрі за 25 000 грн на місяць'
             ],
             [
-                'realtor_full_name' => 'Лисенко Олексій Іванович',
+                'realtor_full_name' => 'Ковальчук Марія Олегівна',
                 'request_requirements' => 'Зняти офіс в бізнес-центрі за 25 000 грн на місяць'
             ],
             [
-                'realtor_full_name' => 'Ковальова Вікторія Миколаївна',
+                'realtor_full_name' => 'Кузьменко Валерій Олександрович',
                 'request_requirements' => 'Купити квартиру за 2 000 000 грн'
             ],
             [
-                'realtor_full_name' => 'Іванова Олена Вікторівна',
+                'realtor_full_name' => 'Ковальчук Марія Олегівна',
                 'request_requirements' => 'Купити квартиру за 2 000 000 грн'
             ],
             [
-                'realtor_full_name' => 'Лисенко Олексій Іванович',
+                'realtor_full_name' => 'Петренко Наталія Василівна',
                 'request_requirements' => 'Купити квартиру за 2 000 000 грн'
             ],
         ]);

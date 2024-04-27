@@ -16,27 +16,27 @@ class ResidentialComplexRealEstateSeeder extends Seeder
         DB::table('residential_complex_real_estate')->insert([
             [
                 'residential_complex_name' => 'Зелений Оазис',
-                'real_estate_address' => 'вул. Першотравнева, 10, Київ'
+                'real_estate_address' => 'вул. Зелена, буд. 14, кв. 20, м. Дніпро'
             ],
             [
                 'residential_complex_name' => 'Комфорт Парк',
-                'real_estate_address' => 'просп. Соборний, 25А, Харків'
+                'real_estate_address' => 'просп. Незалежності, буд. 18, кв. 4, м. Луцьк'
             ],
             [
                 'residential_complex_name' => 'Ексклюзивне Життя',
-                'real_estate_address' => 'вул. Шевченка, 7, Львів'
+                'real_estate_address' => 'вул. Сонячна, буд. 10, кв. 5, м. Київ'
             ],
             [
                 'residential_complex_name' => 'Сонячний Берег',
-                'real_estate_address' => 'вул. Паркова, 33, Одеса'
+                'real_estate_address' => 'просп. Героїв, 33. Одеса'
             ],
             [
                 'residential_complex_name' => 'Родинний Кут',
-                'real_estate_address' => 'вул. Центральна, 15, Дніпро'
+                'real_estate_address' => 'вул. Центральна, буд. 11Б, кв. 6, м. Запоріжжя'
             ],
             [
                 'residential_complex_name' => 'Родинний Комфорт',
-                'real_estate_address' => 'вул. Гагаріна, 55, Запоріжжя'
+                'real_estate_address' => 'вул. Паркова, буд. 3, кв. 15, м. Івано-Франківськ'
             ],
         ]);
     }

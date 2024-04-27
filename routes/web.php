@@ -94,29 +94,29 @@ Route::prefix('residential-complexes')->name('residential-complexes.')->group(fu
 Route::prefix('builders')->name('builders.')->group(function () {
     Route::get('/', BuildersIndex::class)->name('index');
     Route::get('create', BuilderCreate::class)->name('create');
-    Route::get('{todo}/edit', BuilderEdit::class)->name('edit');
+    Route::get('{name}/edit', BuilderEdit::class)->name('edit');
 });
 
 Route::prefix('streets')->name('streets.')->group(function () {
     Route::get('/', StreetsIndex::class)->name('index');
     Route::get('create', StreetCreate::class)->name('create');
-    Route::get('{todo}/edit', StreetEdit::class)->name('edit');
+    Route::get('{name}/edit', StreetEdit::class)->name('edit');
 });
 
 Route::prefix('cities')->name('cities.')->group(function () {
     Route::get('/', CitiesIndex::class)->name('index');
     Route::get('create', CityCreate::class)->name('create');
-    Route::get('{todo}/edit', CityEdit::class)->name('edit');
+    Route::get('{name}/edit', CityEdit::class)->name('edit');
 });
 
 Route::prefix('advertising-campaigns')->name('advertising-campaigns.')->group(function () {
     Route::get('/', AdvertisingCampaignsIndex::class)->name('index');
     Route::get('create', AdvertisingCampaignCreate::class)->name('create');
-    Route::get('{todo}/edit', AdvertisingCampaignEdit::class)->name('edit');
+    Route::get('{name}/edit', AdvertisingCampaignEdit::class)->name('edit');
 });
 
 Route::prefix('services')->name('services.')->group(function () {
     Route::get('/', ServicesIndex::class)->name('index');
     Route::get('create', ServiceCreate::class)->name('create');
-    Route::get('{todo}/edit', ServiceEdit::class)->name('edit');
+    Route::get('{name}/edit', ServiceEdit::class)->name('edit');
 });

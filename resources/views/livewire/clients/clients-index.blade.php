@@ -22,7 +22,7 @@
                 <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">{{ $item->full_name }}</td>
                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $item->phone_number }}</td>
                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $item->date_of_birth }}</td>
-                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"></td>
+                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $item->request_requirements }}</td>
                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $item->city_name }}</td>
                 <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
                     <a href="{{ route('clients.edit', $item->full_name) }}" wire:navigate class="text-indigo-600 hover:text-indigo-900">
