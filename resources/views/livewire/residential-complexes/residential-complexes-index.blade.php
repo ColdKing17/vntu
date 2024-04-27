@@ -1,3 +1,25 @@
-<div>
+<x-table title="ЖК">
+    <x-slot:button>
+        <a href="{{ route('residential-complexes.create') }}" wire:navigate class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+            Додати ЖК
+        </a>
+    </x-slot:button>
 
-</div>
+    <x-slot:thead>
+        <tr>
+            <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">Назва</th>
+            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Опис</th>
+            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Адреса</th>
+            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Забудовник</th>
+            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Поверховість</th>
+            <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-0"></th>
+        </tr>
+    </x-slot:thead>
+
+    <x-slot:tbody>
+        @foreach($items as $item)
+
+            </tr>
+        @endforeach
+    </x-slot:tbody>
+</x-table>
