@@ -41,7 +41,7 @@ use App\Livewire\Streets\StreetEdit;
 use App\Livewire\Streets\StreetsIndex;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'welcome');
+Route::view('/', 'home');
 
 Route::prefix('clients')->name('clients.')->group(function () {
     Route::get('/', ClientsIndex::class)->name('index');
