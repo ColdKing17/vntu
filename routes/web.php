@@ -58,7 +58,7 @@ Route::prefix('requests')->name('requests.')->group(function () {
 Route::prefix('payments')->name('payments.')->group(function () {
     Route::get('/', PaymentsIndex::class)->name('index');
     Route::get('create', PaymentCreate::class)->name('create');
-    Route::get('{todo}/edit', PaymentEdit::class)->name('edit');
+    Route::get('{date}/{client_full_name}/{real_estate_address}/edit', PaymentEdit::class)->name('edit');
 });
 
 Route::prefix('realtors')->name('realtors.')->group(function () {
