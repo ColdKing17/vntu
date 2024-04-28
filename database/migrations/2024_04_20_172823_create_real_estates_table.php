@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('district_name');
 
             $table->primary(['address', 'type']);
-            $table->foreign('residential_complex_name')->references('name')->on('residential_complexes');
-            $table->foreign('district_name')->references('name')->on('districts');
+            $table->foreign('residential_complex_name')->references('name')->on('residential_complexes')->nullOnDelete();
+            $table->foreign('district_name')->references('name')->on('districts')->cascadeOnDelete();
         });
     }
 

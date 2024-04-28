@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('street_name');
 
             $table->primary('address');
-            $table->foreign('street_name')->references('name')->on('streets');
+            $table->foreign('street_name')->references('name')->on('streets')->cascadeOnDelete();
         });
     }
 

@@ -7,6 +7,11 @@ use Livewire\Component;
 
 class StreetsIndex extends Component
 {
+    public function delete(string $name)
+    {
+        DB::table('streets')->where('name', $name)->delete();
+    }
+
     public function render()
     {
         return view('livewire.streets.streets-index', [

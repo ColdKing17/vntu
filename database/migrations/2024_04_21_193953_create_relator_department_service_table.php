@@ -17,9 +17,9 @@ return new class extends Migration
             $table->string('service_name');
 
             $table->primary(['relator_full_name', 'department_name', 'service_name']);
-            $table->foreign('relator_full_name')->references('full_name')->on('realtors');
-            $table->foreign('department_name')->references('name')->on('departments');
-            $table->foreign('service_name')->references('name')->on('services');
+            $table->foreign('relator_full_name')->references('full_name')->on('realtors')->cascadeOnDelete();
+            $table->foreign('department_name')->references('name')->on('departments')->cascadeOnDelete();
+            $table->foreign('service_name')->references('name')->on('services')->cascadeOnDelete();
         });
     }
 
