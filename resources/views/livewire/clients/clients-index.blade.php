@@ -25,7 +25,7 @@
                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $item->request_requirements }}</td>
                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $item->city_name }}</td>
                 <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                    <a href="{{ route('clients.edit', $item->full_name) }}" wire:navigate class="text-indigo-600 hover:text-indigo-900">
+                    <a href="{{ route('clients.edit', ['full_name' => $item->full_name, 'request_requirements' => $item->request_requirements]) }}" wire:navigate class="text-indigo-600 hover:text-indigo-900">
                         Змінити
                     </a>
                     <button wire:click='delete("{{ $item->full_name }}", "{{ $item->request_requirements }}")' class="ml-2 text-red-600 hover:text-red-900">
