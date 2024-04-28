@@ -28,6 +28,9 @@
                     <a href="{{ route('realtors.edit', $item->full_name) }}" wire:navigate class="text-indigo-600 hover:text-indigo-900">
                         Змінити
                     </a>
+                    <button wire:click='delete("{{ $item->full_name }}", "{{ $item->department_name }}", "{{ $item->service_name }}")' class="ml-2 text-red-600 hover:text-red-900">
+                        Видалити
+                    </button>
                 </td>
             </tr>
         @endforeach

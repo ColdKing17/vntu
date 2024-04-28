@@ -28,6 +28,9 @@
                     <a href="{{ route('payments.edit', [$item->date, $item->client_full_name, $item->real_estate_address]) }}" wire:navigate class="text-indigo-600 hover:text-indigo-900">
                         Змінити
                     </a>
+                    <button wire:click='delete("{{ $item->date }}", "{{ $item->client_full_name }}", "{{ $item->real_estate_address }}")' class="ml-2 text-red-600 hover:text-red-900">
+                        Видалити
+                    </button>
                 </td>
             </tr>
         @endforeach

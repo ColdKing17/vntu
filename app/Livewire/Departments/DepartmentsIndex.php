@@ -7,6 +7,18 @@ use Livewire\Component;
 
 class DepartmentsIndex extends Component
 {
+    public function delete(string $departmentName, string $advertisingCampaignName)
+    {
+        DB::table('department_advertising_campaign')
+            ->where('department_name', $departmentName)
+            ->where('advertising_campaign_name', $advertisingCampaignName)
+            ->delete();
+
+        if (DB::table('department_advertising_campaign')->where('department_name', $departmentName)->doesntExist()) {
+            DB::table('departments')->where('name', $departmentName)->delete();
+        }
+    }
+
     public function render()
     {
         $items = DB::table('departments')

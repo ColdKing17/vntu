@@ -7,9 +7,16 @@ use Livewire\Component;
 
 class ClientsIndex extends Component
 {
-    public function delete(string $fullName)
+    public function delete(string $clientFullName, string $requestRequirements)
     {
-        DB::table('clients')->where('full_name', $fullName)->delete();
+        DB::table('request_client')
+            ->where('client_full_name', $clientFullName)
+            ->where('request_requirements', $requestRequirements)
+            ->delete();
+
+        if (DB::table('request_client')->where('client_full_name', $clientFullName)->doesntExist()) {
+            DB::table('clients')->where('full_name', $clientFullName)->delete();
+        }
     }
 
     public function render()

@@ -15,47 +15,47 @@ class RealtorDepartmentServiceSeeder extends Seeder
     {
         DB::table('relator_department_service')->insert([
             [
-                'relator_full_name' => 'Кузьменко Валерій Олександрович',
+                'realtor_full_name' => 'Кузьменко Валерій Олександрович',
                 'department_name' => 'Комерційний',
                 'service_name' => 'Знайти квартиру в аренду'
             ],
             [
-                'relator_full_name' => 'Кузьменко Валерій Олександрович',
+                'realtor_full_name' => 'Кузьменко Валерій Олександрович',
                 'department_name' => 'Комерційний',
                 'service_name' => 'Попомогти купити земельну ділянку'
             ],
             [
-                'relator_full_name' => 'Кузьменко Валерій Олександрович',
+                'realtor_full_name' => 'Кузьменко Валерій Олександрович',
                 'department_name' => 'Юридичний',
                 'service_name' => 'Перевірка документів'
             ],
             [
-                'relator_full_name' => 'Петренко Наталія Василівна',
+                'realtor_full_name' => 'Петренко Наталія Василівна',
                 'department_name' => 'Консалтинговий',
                 'service_name' => 'Юридична допомога при покупці нерухомості'
             ],
             [
-                'relator_full_name' => 'Петренко Наталія Василівна',
+                'realtor_full_name' => 'Петренко Наталія Василівна',
                 'department_name' => 'Комерційний',
                 'service_name' => 'Знайти квартиру в аренду'
             ],
             [
-                'relator_full_name' => 'Петренко Наталія Василівна',
+                'realtor_full_name' => 'Петренко Наталія Василівна',
                 'department_name' => 'Консалтинговий',
                 'service_name' => 'Попомогти купити земельну ділянку'
             ],
             [
-                'relator_full_name' => 'Ковальчук Марія Олегівна',
+                'realtor_full_name' => 'Ковальчук Марія Олегівна',
                 'department_name' => 'Комерційний',
                 'service_name' => 'Перевірка документів'
             ],
             [
-                'relator_full_name' => 'Ковальчук Марія Олегівна',
+                'realtor_full_name' => 'Ковальчук Марія Олегівна',
                 'department_name' => 'Консалтинговий',
                 'service_name' => 'Юридична допомога при покупці нерухомості'
             ],
             [
-                'relator_full_name' => 'Ковальчук Марія Олегівна',
+                'realtor_full_name' => 'Ковальчук Марія Олегівна',
                 'department_name' => 'Юридичний',
                 'service_name' => 'Перевірка документів'
             ],

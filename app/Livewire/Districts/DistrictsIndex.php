@@ -7,6 +7,18 @@ use Livewire\Component;
 
 class DistrictsIndex extends Component
 {
+    public function delete(string $districtName, string $cityName)
+    {
+        DB::table('district_city')
+            ->where('district_name', $districtName)
+            ->where('city_name', $cityName)
+            ->delete();
+
+        if (DB::table('district_city')->where('district_name', $districtName)->doesntExist()) {
+            DB::table('districts')->where('name', $districtName)->delete();
+        }
+    }
+
     public function render()
     {
         $items = DB::table('districts')

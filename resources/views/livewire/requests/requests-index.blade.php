@@ -25,11 +25,18 @@
                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $item->date }}</td>
                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $item->property_type }}</td>
                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $item->realtor_full_name }}</td>
-                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $item->payment_date }}</td>
+                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                    @if($item->payment_date)
+                        {{ $item->payment_date }}, {{ $item->client_full_name }}
+                    @endif
+                </td>
                 <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
                     <a href="{{ route('requests.edit', $item->requirements) }}" wire:navigate class="text-indigo-600 hover:text-indigo-900">
                         Змінити
                     </a>
+                    <button wire:click='delete("{{ $item->requirements }}", "{{ $item->realtor_full_name }}", "{{ $item->payment_date }}")' class="ml-2 text-red-600 hover:text-red-900">
+                        Видалити
+                    </button>
                 </td>
             </tr>
         @endforeach
