@@ -88,7 +88,7 @@ Route::prefix('real-estates')->name('real-estates.')->group(function () {
 Route::prefix('residential-complexes')->name('residential-complexes.')->group(function () {
     Route::get('/', ResidentialComplexesIndex::class)->name('index');
     Route::get('create', ResidentialComplexCreate::class)->name('create');
-    Route::get('{todo}/edit', ResidentialComplexEdit::class)->name('edit');
+    Route::get('{name}/edit', ResidentialComplexEdit::class)->name('edit');
 });
 
 Route::prefix('builders')->name('builders.')->group(function () {
