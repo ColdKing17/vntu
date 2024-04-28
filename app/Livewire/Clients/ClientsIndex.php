@@ -14,8 +14,6 @@ class ClientsIndex extends Component
             ->join('request_client', 'request_client.client_full_name', '=', 'clients.full_name')
             ->get();
 
-        return view('livewire.clients.clients-index', [
-            'items' => $items,
-        ]);
+        return view('livewire.clients.clients-index', compact('items'));
     }
 }

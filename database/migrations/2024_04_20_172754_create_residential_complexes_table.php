@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('residential_complexes', function (Blueprint $table) {
             $table->string('name');
             $table->text('description');
+            $table->string('address');
             $table->string('builder_name');
             $table->unsignedInteger('number_of_floors');
 
-            $table->primary('name');
+            $table->primary(['name', 'address']);
             $table->foreign('builder_name')->references('name')->on('builders');
         });
     }

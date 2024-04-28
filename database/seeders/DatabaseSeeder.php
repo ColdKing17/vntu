@@ -30,7 +30,6 @@ class DatabaseSeeder extends Seeder
             RequestRealtorSeeder::class,
             DepartmentAdvertisingCampaignSeeder::class,
             DistrictCitySeeder::class,
-            ResidentialComplexRealEstateSeeder::class,
             RealtorDepartmentServiceSeeder::class,
             PaymentRequestSeeder::class,
         ]);
