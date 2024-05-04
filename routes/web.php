@@ -64,7 +64,7 @@ Route::prefix('payments')->name('payments.')->group(function () {
 Route::prefix('realtors')->name('realtors.')->group(function () {
     Route::get('/', RealtorsIndex::class)->name('index');
     Route::get('create', RealtorCreate::class)->name('create');
-    Route::get('{full_name}/edit', RealtorEdit::class)->name('edit');
+    Route::get('{relatorFullName}/{departmentName}/{serviceName}/edit', RealtorEdit::class)->name('edit');
 });
 
 Route::prefix('departments')->name('departments.')->group(function () {
