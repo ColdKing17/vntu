@@ -20,11 +20,11 @@ class DepartmentAdvertisingCampaignSeeder extends Seeder
             ],
             [
                 'department_name' => 'Комерційний',
-                'advertising_campaign_name' => 'Знижка 10%'
+                'advertising_campaign_name' => 'Знижка 10 відсотків'
             ],
             [
                 'department_name' => 'Юридичний',
-                'advertising_campaign_name' => 'Нерухомість легко'
+                'advertising_campaign_name' => 'Нерухомість Легко'
             ],
             [
                 'department_name' => 'Юридичний',
@@ -32,11 +32,11 @@ class DepartmentAdvertisingCampaignSeeder extends Seeder
             ],
             [
                 'department_name' => 'Консалтинговий',
-                'advertising_campaign_name' => 'Нерухомість легко'
+                'advertising_campaign_name' => 'Нерухомість Легко'
             ],
             [
                 'department_name' => 'Консалтинговий',
-                'advertising_campaign_name' => 'Знижка 10%'
+                'advertising_campaign_name' => 'Знижка 10 відсотків'
             ],
         ]);
     }

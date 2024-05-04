@@ -22,7 +22,7 @@ class AdvertisingCampaignSeeder extends Seeder
                 'conversion' => 0.18
             ],
             [
-                'name' => 'Знижка 10%',
+                'name' => 'Знижка 10 відсотків',
                 'budget' => 3000,
                 'date' => '2023-04-22',
                 'target_audience' => 'Студенти та молодь',

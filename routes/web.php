@@ -70,7 +70,7 @@ Route::prefix('realtors')->name('realtors.')->group(function () {
 Route::prefix('departments')->name('departments.')->group(function () {
     Route::get('/', DepartmentsIndex::class)->name('index');
     Route::get('create', DepartmentCreate::class)->name('create');
-    Route::get('{todo}/edit', DepartmentEdit::class)->name('edit');
+    Route::get('{departmentName}/{advertisingCampaignName}/edit', DepartmentEdit::class)->name('edit');
 });
 
 Route::prefix('districts')->name('districts.')->group(function () {
