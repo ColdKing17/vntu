@@ -76,7 +76,7 @@ Route::prefix('departments')->name('departments.')->group(function () {
 Route::prefix('districts')->name('districts.')->group(function () {
     Route::get('/', DistrictsIndex::class)->name('index');
     Route::get('create', DistrictCreate::class)->name('create');
-    Route::get('{todo}/edit', DistrictEdit::class)->name('edit');
+    Route::get('{districtName}/{cityName}/edit', DistrictEdit::class)->name('edit');
 });
 
 Route::prefix('real-estates')->name('real-estates.')->group(function () {

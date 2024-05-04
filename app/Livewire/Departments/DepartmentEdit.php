@@ -21,6 +21,7 @@ class DepartmentEdit extends Component
 
     public function create(array $data): void
     {
+        DB::table('department_offices')->where('address', $this->department->office_address)->delete();
         DB::table('department_offices')->where('address', $this->department->office_address)->insert($data['department_office']);
 
         DB::table('departments')->where('name', $this->department->name)->insert($data['department']);
