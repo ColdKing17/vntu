@@ -52,7 +52,7 @@ Route::prefix('clients')->name('clients.')->group(function () {
 Route::prefix('requests')->name('requests.')->group(function () {
     Route::get('/', RequestsIndex::class)->name('index');
     Route::get('create', RequestCreate::class)->name('create');
-    Route::get('{requirements}/edit', RequestEdit::class)->name('edit');
+    Route::get('{requirements}/{realtorFullName}/edit', RequestEdit::class)->name('edit');
 });
 
 Route::prefix('payments')->name('payments.')->group(function () {

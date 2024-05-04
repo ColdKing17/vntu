@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class RequestsIndex extends Component
 {
-    public function delete(string $requestRequirements, string $realtorFullName, string $paymentDate)
+    public function delete(string $requestRequirements, string $realtorFullName, string $paymentDate, string $clientFullName)
     {
         if ($realtorFullName) {
             DB::table('request_realtor')
@@ -16,9 +16,10 @@ class RequestsIndex extends Component
                 ->delete();
         }
 
-        if ($paymentDate) {
+        if ($paymentDate && $clientFullName) {
             DB::table('payment_request')
                 ->where('payment_date', $paymentDate)
+                ->where('client_full_name', $clientFullName)
                 ->where('request_requirements', $requestRequirements)
                 ->delete();
         }
