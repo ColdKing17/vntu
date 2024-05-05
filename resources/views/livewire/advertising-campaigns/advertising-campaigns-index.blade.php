@@ -5,6 +5,22 @@
         </a>
     </x-slot:button>
 
+    <x-slot:filtration>
+        <div class="inline mr-4">
+            <x-label>Цільова аудиторія</x-label>
+            <x-input wire:model.live="target_audience" class="block mt-1 w-full" type="text" />
+        </div>
+
+        <div class="inline mr-4">
+            <x-label>Конверсія</x-label>
+            <div class="flex items-center">
+                <x-input wire:model.live="min_conversion" class="block mt-1 w-full min-w-20" type="number" min="0" max="0.01" />
+                <span class="mx-2">-</span>
+                <x-input wire:model.live="max_conversion" class="block mt-1 w-full min-w-20" type="number" min="0" max="0.01" />
+            </div>
+        </div>
+    </x-slot:filtration>
+
     <x-slot:thead>
         <tr>
             <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">Назва</th>

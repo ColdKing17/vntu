@@ -20,11 +20,9 @@ class DistrictEdit extends Component
     public function create(array $data): void
     {
         DB::table('districts')->where('name', $this->district->name)->delete();
-        DB::table('districts')->where('name', $this->district->name)->insert($data['district']);
+        DB::table('districts')->insert($data['district']);
 
         DB::table('district_city')
-            ->where('district_name', $this->district->name)
-            ->where('city_name', $this->district->city_name)
             ->insert([
                 'district_name' => $data['district']['name'],
                 'city_name' => $data['city_name'],

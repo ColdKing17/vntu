@@ -40,7 +40,7 @@ class CitySeeder extends Seeder
                 'description' => 'Столиця України з давньою історією, численними пам\'ятками архітектури та культури.',
                 'area' => 839,
                 'population' => 2936000,
-                'date_of_establishment' => '0482-01-01'
+                'date_of_establishment' => '1482-01-01'
             ],
             [
                 'name' => 'Дніпро',

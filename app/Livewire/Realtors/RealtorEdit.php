@@ -21,12 +21,9 @@ class RealtorEdit extends Component
     public function create(array $data): void
     {
         DB::table('realtors')->where('full_name', $this->realtor->full_name)->delete();
-        DB::table('realtors')->where('full_name', $this->realtor->full_name)->insert($data['realtor']);
+        DB::table('realtors')->insert($data['realtor']);
 
         DB::table('relator_department_service')
-            ->where('realtor_full_name', $this->realtor->full_name)
-            ->where('department_name', $this->realtor->department_name)
-            ->where('service_name', $this->realtor->service_name)
             ->insert([
                 'realtor_full_name' => $data['realtor']['full_name'],
                 'department_name' => $data['department_name'],

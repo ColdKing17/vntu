@@ -7,6 +7,10 @@ use Livewire\Component;
 
 class AdvertisingCampaignsIndex extends Component
 {
+    public $target_audience;
+    public $min_conversion;
+    public $max_conversion;
+
     public function delete(string $name)
     {
         DB::table('advertising_campaigns')->where('name', $name)->delete();
@@ -14,8 +18,17 @@ class AdvertisingCampaignsIndex extends Component
 
     public function render()
     {
-        return view('livewire.advertising-campaigns.advertising-campaigns-index', [
-            'items' => DB::table('advertising_campaigns')->get(),
-        ]);
+        $items = DB::table('advertising_campaigns')
+            ->when($this->min_conversion, function ($query) {
+                $query->where('conversion', '>=', $this->min_conversion);
+            })
+            ->when($this->max_conversion, function ($query) {
+                $query->where('conversion', '<=', $this->max_conversion);
+            })
+            ->when($this->target_audience, function ($query) {
+                $query->where('target_audience', 'like', "%{$this->target_audience}%");
+            })->get();
+
+        return view('livewire.advertising-campaigns.advertising-campaigns-index', compact('items'));
     }
 }

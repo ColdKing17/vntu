@@ -5,6 +5,18 @@
         </a>
     </x-slot:button>
 
+    <x-slot:filtration>
+        <div class="inline mr-4">
+            <x-label>Дорожнє покриття</x-label>
+            <x-input wire:model.live="road_surface" class="block mt-1 w-full" type="text" />
+        </div>
+
+        <div class="inline mr-4">
+            <x-label>Тип забудови</x-label>
+            <x-input wire:model.live="type_of_building" class="block mt-1 w-full" type="text" />
+        </div>
+    </x-slot:filtration>
+
     <x-slot:thead>
         <tr>
             <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">Назва</th>

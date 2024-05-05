@@ -5,6 +5,36 @@
         </a>
     </x-slot:button>
 
+    <x-slot:filtration>
+        <div class="inline mr-4">
+            <x-label>Клієнт</x-label>
+            <x-select class="mt-1 block w-full" wire:model.live="client_full_name">
+                <x-slot name="options">
+                    <option value=""></option>
+                    @foreach($clients as $client)
+                        <option value="{{ $client->full_name }}" wire:key="{{ $client->full_name }}">
+                            {{ $client->full_name }}
+                        </option>
+                    @endforeach
+                </x-slot>
+            </x-select>
+        </div>
+
+        <div class="inline mr-4">
+            <x-label>Нерухомість</x-label>
+            <x-select class="mt-1 block w-full" wire:model.live="real_estate_address">
+                <x-slot name="options">
+                    <option value=""></option>
+                    @foreach($realEstates as $realEstate)
+                        <option value="{{ $realEstate->address }}" wire:key="{{ $realEstate->address }}">
+                            {{ $realEstate->address }}
+                        </option>
+                    @endforeach
+                </x-slot>
+            </x-select>
+        </div>
+    </x-slot:filtration>
+
     <x-slot:thead>
         <tr>
             <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">Сума</th>

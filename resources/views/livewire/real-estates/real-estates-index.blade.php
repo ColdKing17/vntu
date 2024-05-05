@@ -5,6 +5,36 @@
         </a>
     </x-slot:button>
 
+    <x-slot:filtration>
+        <div class="inline mr-4">
+            <x-label>ЖК</x-label>
+            <x-select class="mt-1 block w-full" wire:model.live="residential_complex_name">
+                <x-slot name="options">
+                    <option value=""></option>
+                    @foreach($residentialComplexes as $residentialComplex)
+                        <option value="{{ $residentialComplex->name }}" wire:key="{{ $residentialComplex->name }}">
+                            {{ $residentialComplex->name }}
+                        </option>
+                    @endforeach
+                </x-slot>
+            </x-select>
+        </div>
+
+        <div class="inline mr-4">
+            <x-label>Район</x-label>
+            <x-select class="mt-1 block w-full" wire:model.live="district_name">
+                <x-slot name="options">
+                    <option value=""></option>
+                    @foreach($districts as $district)
+                        <option value="{{ $district->name }}" wire:key="{{ $district->name }}">
+                            {{ $district->name }}
+                        </option>
+                    @endforeach
+                </x-slot>
+            </x-select>
+        </div>
+    </x-slot:filtration>
+
     <x-slot:thead>
         <tr>
             <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">Адреса</th>

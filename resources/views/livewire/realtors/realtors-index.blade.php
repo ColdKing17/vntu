@@ -5,6 +5,36 @@
         </a>
     </x-slot:button>
 
+    <x-slot:filtration>
+        <div class="inline mr-4">
+            <x-label>Відділ</x-label>
+            <x-select class="mt-1 block w-full" wire:model.live="department_name">
+                <x-slot name="options">
+                    <option value=""></option>
+                    @foreach($departments as $department)
+                        <option value="{{ $department->name }}" wire:key="{{ $department->name }}">
+                            {{ $department->name }}
+                        </option>
+                    @endforeach
+                </x-slot>
+            </x-select>
+        </div>
+
+        <div class="inline mr-4">
+            <x-label>Послуга</x-label>
+            <x-select class="mt-1 block w-full" wire:model.live="service_name">
+                <x-slot name="options">
+                    <option value=""></option>
+                    @foreach($services as $service)
+                        <option value="{{ $service->name }}" wire:key="{{ $service->name }}">
+                            {{ $service->name }}
+                        </option>
+                    @endforeach
+                </x-slot>
+            </x-select>
+        </div>
+    </x-slot:filtration>
+
     <x-slot:thead>
         <tr>
             <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">ПІБ</th>

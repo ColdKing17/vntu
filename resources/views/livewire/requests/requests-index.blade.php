@@ -5,6 +5,36 @@
         </a>
     </x-slot:button>
 
+    <x-slot:filtration>
+        <div class="inline mr-4">
+            <x-label>Ріелтор</x-label>
+            <x-select class="mt-1 block w-full" wire:model.live="realtor_full_name">
+                <x-slot name="options">
+                    <option value=""></option>
+                    @foreach($realtors as $realtor)
+                        <option value="{{ $realtor->full_name }}" wire:key="{{ $realtor->full_name }}">
+                            {{ $realtor->full_name }}
+                        </option>
+                    @endforeach
+                </x-slot>
+            </x-select>
+        </div>
+
+        <div class="inline mr-4">
+            <x-label>Платіж</x-label>
+            <x-select class="mt-1 block w-full" wire:model.live="paymentData">
+                <x-slot name="options">
+                    <option value=""></option>
+                    @foreach($payments as $payment)
+                        <option value="{{ $payment->date }}, {{ $payment->client_full_name }}" wire:key="{{ $payment->date }}, {{ $payment->client_full_name }}">
+                            {{ $payment->date }}, {{ $payment->client_full_name }}
+                        </option>
+                    @endforeach
+                </x-slot>
+            </x-select>
+        </div>
+    </x-slot:filtration>
+
     <x-slot:thead>
         <tr>
             <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">Вимоги</th>
