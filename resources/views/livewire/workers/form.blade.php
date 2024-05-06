@@ -26,8 +26,8 @@
                 <x-slot name="options">
                     <option value=""></option>
                     @foreach($offices as $office)
-                        <option value="{{ $office->name }}" wire:key="{{ $office->name }}">
-                            {{ $office->name }}
+                        <option value="{{ $office->address }}" wire:key="{{ $office->address }}">
+                            {{ $office->address }}
                         </option>
                     @endforeach
                 </x-slot>

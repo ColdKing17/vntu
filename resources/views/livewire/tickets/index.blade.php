@@ -24,7 +24,7 @@
                 <x-slot name="options">
                     <option value=""></option>
                     @foreach($payments as $payment)
-                        <option value="{{ $payment->number }}">{{ $payment->number }}</option>
+                        <option value="{{ $payment->name }}">{{ $payment->name }}</option>
                     @endforeach
                 </x-slot>
             </x-select>

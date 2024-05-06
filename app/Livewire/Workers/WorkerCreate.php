@@ -11,8 +11,9 @@ class WorkerCreate extends Component
 
     public function create(array $data): void
     {
-        dd($data);
-//        DB::table('workers')->insert($data);
+        DB::table('workers')->insert($data['worker']);
+        DB::table('worker_cabinet_office')->insert($data['worker_cabinet_office']);
+
         $this->redirectRoute('workers.index');
     }
 

@@ -20,7 +20,11 @@ class WorkerEdit extends Component
 
     public function create(array $data): void
     {
-//        DB::table('workers')->where('full_name', $this->worker->full_name)->update($data);
+        DB::table('workers')->where('full_name', $this->worker->full_name)->delete();
+
+        DB::table('workers')->insert($data['worker']);
+        DB::table('worker_cabinet_office')->insert($data['worker_cabinet_office']);
+
         $this->redirectRoute('workers.index');
     }
 
