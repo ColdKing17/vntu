@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->unsignedInteger('square');
             $table->unsignedInteger('superficiality');
+            $table->string('district');
 
             $table->primary('address');
         });
