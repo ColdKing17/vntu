@@ -2,7 +2,7 @@
 
 1. Clone a repository into a new directory:
    ```
-   git clone --branch develop-backlog https://github.com/iservetnik/vntu.git
+   git clone --branch develop-backlog https://github.com/ColdKing17/vntu.git
    ```
 2. Go to the working directory: `cd vntu`
 3. Prepare .env: `cp .env.example .env`
