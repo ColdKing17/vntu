@@ -18,18 +18,18 @@ class WorkerForm extends Component
     public Collection $cabinets;
     public Collection $offices;
 
-    public function mount($city = null)
+    public function mount($worker = null)
     {
         $this->cabinets = DB::table('cabinets')->get();
         $this->offices = DB::table('offices')->get();
 
-        if ($city) {
-            $this->full_name = $city->full_name;
-            $this->internal_number = $city->internal_number;
-            $this->email = $city->email;
-            $this->experience = $city->experience;
-            $this->cabinet_number = $city->cabinet_number;
-            $this->office_address = $city->office_address;
+        if ($worker) {
+            $this->full_name = $worker->full_name;
+            $this->internal_number = $worker->internal_number;
+            $this->email = $worker->email;
+            $this->experience = $worker->experience;
+            $this->cabinet_number = $worker->cabinet_number;
+            $this->office_address = $worker->office_address;
         }
     }
 
