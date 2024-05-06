@@ -1,3 +1,60 @@
-<div>
+<x-table title="Кабінети">
+    <x-slot:button>
+        <a href="{{ route('cabinets.create') }}" wire:navigate class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+            Додати кабінет
+        </a>
+    </x-slot:button>
 
-</div>
+    <x-slot:filtration>
+        <div class="inline mr-4">
+            <x-label>Площа</x-label>
+            <div class="flex items-center">
+                <x-input wire:model.live="min_square" class="block mt-1 w-full min-w-20" type="number" min="0" max="0.01" />
+                <span class="mx-2">-</span>
+                <x-input wire:model.live="max_square" class="block mt-1 w-full min-w-20" type="number" min="0" max="0.01" />
+            </div>
+        </div>
+
+        <div class="inline mr-4">
+            <x-label>Наявність факсу</x-label>
+            <x-select class="mt-1 block w-full" wire:model.live="has_fax">
+                <x-slot name="options">
+                    <option value="">Усі</option>
+                    <option value="1">Так</option>
+                    <option value="0">Ні</option>
+                </x-slot>
+            </x-select>
+        </div>
+    </x-slot:filtration>
+
+    <x-slot:thead>
+        <tr>
+            <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">Номер</th>
+            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Кількість працівників</th>
+            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Поверх</th>
+            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Площа</th>
+            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Наявність факсу</th>
+            <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-0"></th>
+        </tr>
+    </x-slot:thead>
+
+    <x-slot:tbody>
+        @foreach($items as $item)
+            <tr>
+                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">{{ $item->number }}</td>
+                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $item->workers_amount }}</td>
+                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $item->floor }}</td>
+                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $item->square }}</td>
+                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $item->has_fax ? 'Так' : 'Ні' }}</td>
+                <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
+                    <a href="{{ route('cabinets.edit', $item->number) }}" wire:navigate class="text-indigo-600 hover:text-indigo-900">
+                        Змінити
+                    </a>
+                    <button wire:click='delete("{{ $item->number }}")' class="ml-2 text-red-600 hover:text-red-900">
+                        Видалити
+                    </button>
+                </td>
+            </tr>
+        @endforeach
+    </x-slot:tbody>
+</x-table>
