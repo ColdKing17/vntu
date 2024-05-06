@@ -17,8 +17,8 @@ return new class extends Migration
 
             $table->primary(['payment_name', 'number']);
 
-            $table->foreign('payment_name')->references('name')->on('payments');
-            $table->foreign('number')->references('internal_number')->on('terminals');
+            $table->foreign('payment_name')->references('name')->on('payments')->cascadeOnDelete();
+            $table->foreign('number')->references('internal_number')->on('terminals')->cascadeOnDelete();
 
         });
     }

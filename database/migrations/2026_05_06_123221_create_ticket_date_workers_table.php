@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('ticket_date_workers', function (Blueprint $table) {
             $table->date('ticket_date');
-            $table->unsignedInteger('worker');
+            $table->string('worker');
 
             $table->primary(['ticket_date', 'worker']);
-            $table->foreign('worker')->references('fullname')->on('workers');
-            $table->foreign('ticket_date')->references('ticket_date')->on('ticket');
+            $table->foreign('worker')->references('fullname')->on('workers')->cascadeOnDelete();
+            $table->foreign('ticket_date')->references('ticket_date')->on('ticket')->cascadeOnDelete();
 
         });
     }

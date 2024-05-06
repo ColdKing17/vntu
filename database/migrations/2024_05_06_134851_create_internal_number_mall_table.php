@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('internal_number_mall', function (Blueprint $table) {
             $table->unsignedInteger('internal_number');
-            $table->string('mall_name');
+            $table->string('mall_address');
 
-            $table->primary(['internal_number', 'mall_name']);
+            $table->primary(['internal_number', 'mall_address']);
 
-            $table->foreign('internal_number')->references('internal_number')->on('terminals');
-            $table->foreign('mall_name')->references('name')->on('mall');
+            $table->foreign('internal_number')->references('internal_number')->on('terminals')->cascadeOnDelete();
+            $table->foreign('mall_address')->references('address')->on('mall')->cascadeOnDelete();
         });
     }
 
