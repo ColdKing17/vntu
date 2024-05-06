@@ -17,6 +17,5 @@
     npm install
     npm run build
     ```
-7. You can generate mock data using `php artisan db:seed --class=MockDatabaseSeeder`
-8. To work properly, it is necessary to process queues and schedule commands
-9. The site available on `localhost`
+7. To work properly, it is necessary to process queues and schedule commands
+8. The site available on `localhost`
