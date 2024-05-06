@@ -30,8 +30,8 @@
         </div>
 
         <div class="sm:col-span-3">
-            <x-label required>Тікет техпідтримки</x-label>
-            <x-select class="mt-1 block w-full" wire:model="ticket_date" required>
+            <x-label>Тікет техпідтримки</x-label>
+            <x-select class="mt-1 block w-full" wire:model="ticket_date">
                 <x-slot name="options">
                     <option value=""></option>
                     @foreach($tickets as $ticket)

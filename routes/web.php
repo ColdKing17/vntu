@@ -76,7 +76,7 @@ Route::prefix('workers')->name('workers.')->group(function () {
 Route::prefix('offices')->name('offices.')->group(function () {
     Route::get('/', OfficesIndex::class)->name('index');
     Route::get('create', OfficeCreate::class)->name('create');
-    Route::get('{address}/{ticket_date}/edit', OfficeEdit::class)->name('edit');
+    Route::get('{address}/edit', OfficeEdit::class)->name('edit');
 });
 
 Route::prefix('payments')->name('payments.')->group(function () {

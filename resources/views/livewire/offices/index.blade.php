@@ -44,7 +44,7 @@
                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $item->workers_amount }}</td>
                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $item->ticket_date }}</td>
                 <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                    <a href="{{ route('offices.edit', [$item->address, $item->ticket_date]) }}" wire:navigate class="text-indigo-600 hover:text-indigo-900">
+                    <a href="{{ route('offices.edit', ['address' => $item->address, 'ticket_date' => $item->ticket_date]) }}" wire:navigate class="text-indigo-600 hover:text-indigo-900">
                         Змінити
                     </a>
                     <button wire:click='delete("{{ $item->address }}", "{{ $item->ticket_date }}")' class="ml-2 text-red-600 hover:text-red-900">

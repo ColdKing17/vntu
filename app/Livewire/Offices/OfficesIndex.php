@@ -20,10 +20,12 @@ class OfficesIndex extends Component
 
     public function delete(string $address, string $ticketDate)
     {
-        DB::table('office_ticket')
-            ->where('office_address', $address)
-            ->where('ticket_date', $ticketDate)
-            ->delete();
+        if ($ticketDate) {
+            DB::table('office_ticket')
+                ->where('office_address', $address)
+                ->where('ticket_date', $ticketDate)
+                ->delete();
+        }
 
         if (DB::table('office_ticket')->where('office_address', $address)->doesntExist()) {
             DB::table('offices')->where('address', $address)->delete();
@@ -33,7 +35,7 @@ class OfficesIndex extends Component
     public function render()
     {
         $items = DB::table('offices')
-            ->join('office_ticket', 'office_ticket.office_address', '=', 'offices.address')
+            ->leftJoin('office_ticket', 'office_ticket.office_address', '=', 'offices.address')
             ->when($this->address, function ($query) {
                 $query->where('address', $this->address);
             })

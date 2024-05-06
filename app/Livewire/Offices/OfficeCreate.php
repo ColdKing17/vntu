@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Offices;
 
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class OfficeCreate extends Component
@@ -10,8 +11,12 @@ class OfficeCreate extends Component
 
     public function create(array $data): void
     {
-        dd($data);
-//        DB::table('offices')->insert($data);
+        DB::table('offices')->insert($data['office']);
+
+        if ($data['office_ticket']['ticket_date']) {
+            DB::table('office_ticket')->insert($data['office_ticket']);
+        }
+
         $this->redirectRoute('offices.index');
     }
 
