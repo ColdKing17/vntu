@@ -15,7 +15,7 @@ return new class extends Migration
             $table->date('subscription_date');
             $table->string('category_name');
 
-            $table->primary(['subscription_date', 'category_name']);
+            $table->primary(['subscription_date']);
 
             $table->foreign('subscription_date')->references('date')->on('subscriptions')->cascadeOnDelete();
             $table->foreign('category_name')->references('name')->on('categories')->cascadeOnDelete();

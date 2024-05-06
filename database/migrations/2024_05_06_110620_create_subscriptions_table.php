@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->date('date');
-            $table->unsignedDouble('subscription_amount');
+            $table->unsignedDouble('amount');
             $table->string('payment_method');
             $table->unsignedInteger('duration');
             $table->string('currency_symbol');
