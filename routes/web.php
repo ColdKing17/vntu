@@ -82,7 +82,7 @@ Route::prefix('offices')->name('offices.')->group(function () {
 Route::prefix('payments')->name('payments.')->group(function () {
     Route::get('/', PaymentsIndex::class)->name('index');
     Route::get('create', PaymentCreate::class)->name('create');
-    Route::get('{name}/edit', PaymentEdit::class)->name('edit');
+    Route::get('{name}/{terminal_internal_number}/edit', PaymentEdit::class)->name('edit');
 });
 
 Route::prefix('terminals')->name('terminals.')->group(function () {

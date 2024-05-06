@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->string('name');
             $table->string('supported_currency_symbol');
-            $table->unsignedInteger('security_level');
+            $table->string('security_level');
             $table->unsignedInteger('max_sum');
             $table->unsignedInteger('commission');
 
