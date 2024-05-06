@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('subscription_category', function (Blueprint $table) {
+        Schema::create('subscription_client', function (Blueprint $table) {
             $table->date('subscription_date');
-            $table->string('category_name');
+            $table->string('client_full_name');
 
-            $table->primary(['subscription_date', 'category_name']);
+            $table->primary(['subscription_date', 'client_full_name']);
 
             $table->foreign('subscription_date')->references('date')->on('subscriptions')->cascadeOnDelete();
-            $table->foreign('category_name')->references('name')->on('categories')->cascadeOnDelete();
+            $table->foreign('client_full_name')->references('full_name')->on('clients')->cascadeOnDelete();
         });
     }
 
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('subscription_category');
+        Schema::dropIfExists('subscription_client');
     }
 };

@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cabinet', function (Blueprint $table) {
+        Schema::create('cabinets', function (Blueprint $table) {
             $table->unsignedInteger('number');
             $table->unsignedInteger('workers_amount');
             $table->unsignedInteger('floor');
             $table->unsignedInteger('square');
-            $table->boolean('fax');
+            $table->boolean('has_fax');
+
             $table->primary('number');
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cabinet');
+        Schema::dropIfExists('cabinets');
     }
 };

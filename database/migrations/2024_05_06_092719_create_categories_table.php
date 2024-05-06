@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedInteger('subscribers_amount');
             $table->string('categories_description');
             $table->unsignedDouble('categories_cashback');
+
             $table->primary('name');
         });
     }

@@ -14,10 +14,12 @@ return new class extends Migration
         Schema::create('offices', function (Blueprint $table) {
             $table->string('address');
             $table->string('country');
-            $table->string('city');
+            $table->string('city_name');
             $table->string('workers_amount');
+
             $table->primary('address');
-            $table->foreign('city')->references('name')->on('cities')->cascadeOnDelete();
+
+            $table->foreign('city_name')->references('name')->on('cities')->cascadeOnDelete();
         });
     }
 

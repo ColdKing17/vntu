@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedDouble('rate');
             $table->date('rate_changed');
             $table->string('name');
+
             $table->primary('symbol');
         });
     }

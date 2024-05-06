@@ -12,13 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('subscriptions', function (Blueprint $table) {
-            $table->date('subscription_date');
+            $table->date('date');
             $table->unsignedDouble('subscription_amount');
             $table->string('payment_method');
             $table->unsignedInteger('duration');
-            $table->string('currency');
-            $table->primary('subscription_date');
-            $table->foreign('currency')->references('symbol')->on('currencies')->cascadeOnDelete();
+            $table->string('currency_symbol');
+
+            $table->primary('date');
+
+            $table->foreign('currency_symbol')->references('symbol')->on('currencies')->cascadeOnDelete();
         });
     }
 

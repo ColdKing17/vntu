@@ -14,9 +14,11 @@ return new class extends Migration
         Schema::create('terminals', function (Blueprint $table) {
             $table->unsignedInteger('internal_number');
             $table->unsignedInteger('max_supported_amount');
-            $table->string('city');
+            $table->string('city_name');
+
             $table->primary('internal_number');
-            $table->foreign('city')->references('name')->on('cities')->cascadeOnDelete();
+
+            $table->foreign('city_name')->references('name')->on('cities')->cascadeOnDelete();
         });
     }
 

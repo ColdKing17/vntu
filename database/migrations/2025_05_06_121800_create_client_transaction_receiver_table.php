@@ -11,17 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('client_transaction_payment', function (Blueprint $table) {
-            $table->string('client_full_name');
+        Schema::create('transaction_receiver', function (Blueprint $table) {
             $table->string('transaction_id');
-            $table->string('payment_name');
+            $table->string('receiver');
 
-            $table->primary(['client_full_name', 'transaction_id', 'payment_name']);
+            $table->primary(['transaction_id', 'receiver']);
 
-            $table->foreign('client_full_name')->references('full_name')->on('clients')->cascadeOnDelete();
             $table->foreign('transaction_id')->references('transaction_id')->on('transactions')->cascadeOnDelete();
-            $table->foreign('payment_name')->references('name')->on('payments')->cascadeOnDelete();
-
         });
     }
 
@@ -30,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('client_transaction_payment');
+        Schema::dropIfExists('transaction_receiver');
     }
 };

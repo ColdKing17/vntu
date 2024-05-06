@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('transaction', function (Blueprint $table) {
+        Schema::create('transactions', function (Blueprint $table) {
             $table->string('transaction_id');
             $table->string('card_number');
             $table->date('subscription_date');
+
             $table->primary('transaction_id');
-            $table->foreign('subscription_date')->references('subscription_date')->on('subscriptions')->cascadeOnDelete();
+
+            $table->foreign('subscription_date')->references('date')->on('subscriptions')->cascadeOnDelete();
         });
     }
 
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('transaction');
+        Schema::dropIfExists('transactions');
     }
 };

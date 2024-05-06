@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('name_terminal', function (Blueprint $table) {
+        Schema::create('tickets', function (Blueprint $table) {
+            $table->date('date');
+            $table->string('ticket_status');
+            $table->string('ticket_closed');
             $table->string('payment_name');
-            $table->unsignedInteger('number');
 
-            $table->primary(['payment_name', 'number']);
+            $table->primary('date');
 
             $table->foreign('payment_name')->references('name')->on('payments')->cascadeOnDelete();
-            $table->foreign('number')->references('internal_number')->on('terminals')->cascadeOnDelete();
-
         });
     }
 
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('name_terminal');
+        Schema::dropIfExists('tickets');
     }
 };

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedInteger('people_amount');
             $table->unsignedInteger('terminals_amount');
             $table->unsignedInteger('square');
+
             $table->primary('name');
         });
     }
