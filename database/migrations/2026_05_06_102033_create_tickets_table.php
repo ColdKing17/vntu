@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->date('date');
-            $table->string('ticket_status');
-            $table->string('ticket_closed');
+            $table->string('status');
+            $table->boolean('closed');
             $table->string('payment_name');
 
             $table->primary('date');
