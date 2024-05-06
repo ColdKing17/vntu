@@ -88,7 +88,7 @@ Route::prefix('payments')->name('payments.')->group(function () {
 Route::prefix('terminals')->name('terminals.')->group(function () {
     Route::get('/', TerminalsIndex::class)->name('index');
     Route::get('create', TerminalCreate::class)->name('create');
-    Route::get('{internal_number}/edit', TerminalEdit::class)->name('edit');
+    Route::get('{internal_number}/{mall_address}/edit', TerminalEdit::class)->name('edit');
 });
 
 Route::prefix('cities')->name('cities.')->group(function () {
