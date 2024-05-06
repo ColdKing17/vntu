@@ -1,15 +1,15 @@
 <ul role="list" class="-mx-2 space-y-1">
     <x-sidebar.sidebar-navigation-item route-name="clients" text="Клієнти" />
-    <x-sidebar.sidebar-navigation-item route-name="requests" text="Запити" />
-    <x-sidebar.sidebar-navigation-item route-name="payments" text="Платежі" />
-    <x-sidebar.sidebar-navigation-item route-name="realtors" text="Ріелтори" />
-    <x-sidebar.sidebar-navigation-item route-name="departments" text="Відділи" />
-    <x-sidebar.sidebar-navigation-item route-name="districts" text="Райони" />
-    <x-sidebar.sidebar-navigation-item route-name="real-estates" text="Нерухомості" />
-    <x-sidebar.sidebar-navigation-item route-name="residential-complexes" text="ЖК" />
-    <x-sidebar.sidebar-navigation-item route-name="builders" text="Забудовники" />
-    <x-sidebar.sidebar-navigation-item route-name="streets" text="Вулиці" />
+    <x-sidebar.sidebar-navigation-item route-name="transactions" text="Транзакції" />
+    <x-sidebar.sidebar-navigation-item route-name="subscriptions" text="Підписки" />
+    <x-sidebar.sidebar-navigation-item route-name="tickets" text="Тікети підтримки" />
+    <x-sidebar.sidebar-navigation-item route-name="workers" text="Працівники" />
+    <x-sidebar.sidebar-navigation-item route-name="offices" text="Офіси" />
+    <x-sidebar.sidebar-navigation-item route-name="payments" text="Платіжні системи" />
+    <x-sidebar.sidebar-navigation-item route-name="terminals" text="Термінали" />
     <x-sidebar.sidebar-navigation-item route-name="cities" text="Міста" />
-    <x-sidebar.sidebar-navigation-item route-name="advertising-campaigns" text="Рекламні кампанії" />
-    <x-sidebar.sidebar-navigation-item route-name="services" text="Послуги" />
+    <x-sidebar.sidebar-navigation-item route-name="categories" text="Категорії" />
+    <x-sidebar.sidebar-navigation-item route-name="currencies" text="Валюти" />
+    <x-sidebar.sidebar-navigation-item route-name="malls" text="ТРЦ" />
+    <x-sidebar.sidebar-navigation-item route-name="cabinets" text="Кабінети" />
 </ul>
