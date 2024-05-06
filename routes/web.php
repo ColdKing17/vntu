@@ -70,7 +70,7 @@ Route::prefix('tickets')->name('tickets.')->group(function () {
 Route::prefix('workers')->name('workers.')->group(function () {
     Route::get('/', WorkersIndex::class)->name('index');
     Route::get('create', WorkerCreate::class)->name('create');
-    Route::get('{full_name}/edit', WorkerEdit::class)->name('edit');
+    Route::get('{full_name}/{cabinet_number}/{office_address}/edit', WorkerEdit::class)->name('edit');
 });
 
 Route::prefix('offices')->name('offices.')->group(function () {

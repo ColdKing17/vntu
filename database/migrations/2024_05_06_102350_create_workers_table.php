@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('workers', function (Blueprint $table) {
             $table->string('full_name');
             $table->unsignedInteger('internal_number');
-            $table->string('workers_email');
+            $table->string('email');
+            $table->unsignedInteger('experience');
 
             $table->primary('full_name');
         });
