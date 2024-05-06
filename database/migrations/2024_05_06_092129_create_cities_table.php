@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('districts', function (Blueprint $table) {
+        Schema::create('cities', function (Blueprint $table) {
             $table->string('name');
-            $table->text('description');
-            $table->unsignedDouble('rating');
-            $table->unsignedDouble('area');
-
+            $table->unsignedInteger('people_amount');
+            $table->unsignedInteger('terminals_amount');
+            $table->unsignedInteger('square');
             $table->primary('name');
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('districts');
+        Schema::dropIfExists('cities');
     }
 };

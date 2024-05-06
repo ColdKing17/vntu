@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('clients', function (Blueprint $table) {
+        Schema::create('client', function (Blueprint $table) {
             $table->string('full_name');
-            $table->string('phone_number');
+            $table->string('phone');
             $table->date('date_of_birth');
-            $table->string('city_name');
-
             $table->primary('full_name');
-            $table->foreign('city_name')->references('name')->on('cities')->cascadeOnDelete();
         });
     }
 
@@ -27,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('clients');
+        Schema::dropIfExists('client');
     }
 };

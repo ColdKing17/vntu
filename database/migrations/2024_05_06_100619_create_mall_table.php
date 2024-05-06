@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('departments', function (Blueprint $table) {
+        Schema::create('mall', function (Blueprint $table) {
+            $table->string('address');
             $table->string('name');
-            $table->string('office_address');
-            $table->string('phone_number');
-
-            $table->primary('name');
-            $table->foreign('office_address')->references('address')->on('department_offices')->cascadeOnDelete();
+            $table->unsignedInteger('square');
+            $table->unsignedInteger('superficiality');
+            $table->primary('address');
         });
     }
 
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('departments');
+        Schema::dropIfExists('mall');
     }
 };

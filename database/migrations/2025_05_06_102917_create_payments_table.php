@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('streets', function (Blueprint $table) {
+        Schema::create('payments', function (Blueprint $table) {
             $table->string('name');
-            $table->unsignedDouble('length');
-            $table->string('road_surface');
-            $table->string('type_of_building');
-
+            $table->string('supported_currency');
+            $table->unsignedInteger('security_level');
+            $table->unsignedInteger('max_sum');
+            $table->unsignedInteger('commission');
             $table->primary('name');
+            $table->foreign('supported_currency')->references('symbol')->on('currencies')->cascadeOnDelete();
         });
     }
 
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('streets');
+        Schema::dropIfExists('payments');
     }
 };

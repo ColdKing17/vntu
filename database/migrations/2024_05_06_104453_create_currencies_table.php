@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('advertising_campaigns', function (Blueprint $table) {
+        Schema::create('currencies', function (Blueprint $table) {
+            $table->string('symbol');
+            $table->unsignedDouble('rate');
+            $table->date('rate_changed');
             $table->string('name');
-            $table->unsignedDouble('budget');
-            $table->date('date');
-            $table->string('target_audience');
-            $table->unsignedDouble('conversion');
-
-            $table->primary('name');
+            $table->primary('symbol');
         });
     }
 
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('advertising_campaigns');
+        Schema::dropIfExists('currencies');
     }
 };
