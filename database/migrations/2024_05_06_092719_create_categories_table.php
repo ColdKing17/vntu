@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->string('name');
             $table->unsignedInteger('subscribers_amount');
-            $table->string('categories_description');
-            $table->unsignedDouble('categories_cashback');
+            $table->string('description');
+            $table->unsignedDouble('cashback');
 
             $table->primary('name');
         });
