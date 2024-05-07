@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('city_name');
 
             $table->primary(['city_name', 'district_name']);
-            $table->foreign('city_name')->references('name')->on('cities')->cascadeOnDelete();
-            $table->foreign('district_name')->references('name')->on('districts')->cascadeOnDelete();
+            $table->foreign('city_name')->references('name')->on('cities')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreign('district_name')->references('name')->on('districts')->cascadeOnUpdate()->cascadeOnDelete();
         });
     }
 

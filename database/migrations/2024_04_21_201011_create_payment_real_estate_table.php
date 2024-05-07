@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('client_full_name');
 
             $table->primary(['request_requirements', 'payment_date', 'client_full_name']);
-            $table->foreign('request_requirements')->references('requirements')->on('requests')->cascadeOnDelete();
-            $table->foreign(['payment_date', 'client_full_name'])->references(['date', 'client_full_name'])->on('payments')->cascadeOnDelete();
+            $table->foreign('request_requirements')->references('requirements')->on('requests')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreign(['payment_date', 'client_full_name'])->references(['date', 'client_full_name'])->on('payments')->cascadeOnUpdate()->cascadeOnDelete();
         });
     }
 

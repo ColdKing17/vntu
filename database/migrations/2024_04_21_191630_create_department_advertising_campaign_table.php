@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('advertising_campaign_name');
 
             $table->primary(['advertising_campaign_name', 'department_name']);
-            $table->foreign('advertising_campaign_name', 'advertising_campaign_name')->references('name')->on('advertising_campaigns')->cascadeOnDelete();
-            $table->foreign('department_name')->references('name')->on('departments')->cascadeOnDelete();
+            $table->foreign('advertising_campaign_name', 'advertising_campaign_name')->references('name')->on('advertising_campaigns')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreign('department_name')->references('name')->on('departments')->cascadeOnUpdate()->cascadeOnDelete();
         });
     }
 

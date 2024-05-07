@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('real_estate_address');
 
             $table->primary(['date', 'client_full_name', 'real_estate_address']);
-            $table->foreign('real_estate_address')->references('address')->on('real_estates')->cascadeOnDelete();
-            $table->foreign('client_full_name')->references('full_name')->on('clients')->cascadeOnDelete();
+            $table->foreign('real_estate_address')->references('address')->on('real_estates')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreign('client_full_name')->references('full_name')->on('clients')->cascadeOnUpdate()->cascadeOnDelete();
         });
     }
 

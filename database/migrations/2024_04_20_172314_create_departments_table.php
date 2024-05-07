@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('phone_number');
 
             $table->primary('name');
-            $table->foreign('office_address')->references('address')->on('department_offices')->cascadeOnDelete();
+            $table->foreign('office_address')->references('address')->on('department_offices')->cascadeOnUpdate()->cascadeOnDelete();
         });
     }
 

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->unsignedInteger('number_of_floors');
 
             $table->primary(['name', 'address']);
-            $table->foreign('builder_name')->references('name')->on('builders')->cascadeOnDelete();
+            $table->foreign('builder_name')->references('name')->on('builders')->cascadeOnUpdate()->cascadeOnDelete();
         });
     }
 
