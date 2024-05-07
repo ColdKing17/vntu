@@ -1,5 +1,6 @@
 <ul role="list" class="-mx-2 space-y-1">
     <x-sidebar.sidebar-navigation-item route-name="clients" text="Клієнти" />
+    <x-sidebar.sidebar-navigation-item route-name="client_payment" text="Клієнти + Платіжна система" />
     <x-sidebar.sidebar-navigation-item route-name="transactions" text="Транзакції" />
     <x-sidebar.sidebar-navigation-item route-name="subscriptions" text="Підписки" />
     <x-sidebar.sidebar-navigation-item route-name="tickets" text="Тікети підтримки" />

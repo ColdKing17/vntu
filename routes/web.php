@@ -11,6 +11,7 @@ use App\Livewire\Cities\CityCreate;
 use App\Livewire\Cities\CityEdit;
 use App\Livewire\Clients\ClientCreate;
 use App\Livewire\Clients\ClientEdit;
+use App\Livewire\Clients\ClientPaymentIndex;
 use App\Livewire\Clients\ClientsIndex;
 use App\Livewire\Currencies\CurrenciesIndex;
 use App\Livewire\Currencies\CurrencyCreate;
@@ -47,6 +48,10 @@ Route::prefix('clients')->name('clients.')->group(function () {
     Route::get('/', ClientsIndex::class)->name('index');
     Route::get('create', ClientCreate::class)->name('create');
     Route::get('{full_name}/edit', ClientEdit::class)->name('edit');
+});
+
+Route::prefix('client_payment')->name('client_payment.')->group(function () {
+    Route::get('/', ClientPaymentIndex::class)->name('index');
 });
 
 Route::prefix('transactions')->name('transactions.')->group(function () {
