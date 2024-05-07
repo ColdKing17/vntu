@@ -12,6 +12,7 @@ use App\Livewire\Cities\CityEdit;
 use App\Livewire\Clients\ClientCreate;
 use App\Livewire\Clients\ClientEdit;
 use App\Livewire\Clients\ClientsIndex;
+use App\Livewire\Clients\ClientsV2Index;
 use App\Livewire\Departments\DepartmentCreate;
 use App\Livewire\Departments\DepartmentEdit;
 use App\Livewire\Departments\DepartmentsIndex;
@@ -47,6 +48,10 @@ Route::prefix('clients')->name('clients.')->group(function () {
     Route::get('/', ClientsIndex::class)->name('index');
     Route::get('create', ClientCreate::class)->name('create');
     Route::get('{full_name}/edit', ClientEdit::class)->name('edit');
+});
+
+Route::prefix('clients_v2')->name('clients_v2.')->group(function () {
+    Route::get('/', ClientsV2Index::class)->name('index');
 });
 
 Route::prefix('requests')->name('requests.')->group(function () {
