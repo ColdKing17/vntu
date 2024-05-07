@@ -1,6 +1,6 @@
 <x-table title="Категорії">
     <x-slot:button>
-        <a href="{{ route('categories.create') }}" wire:navigate class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+        <a href="{{ route('categories.create') }}" wire:navigate class="block rounded-md bg-green-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">
             Додати категогію
         </a>
     </x-slot:button>
@@ -39,7 +39,7 @@
                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $item->description }}</td>
                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $item->cashback }}</td>
                 <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                    <a href="{{ route('categories.edit', $item->name) }}" wire:navigate class="text-indigo-600 hover:text-indigo-900">
+                    <a href="{{ route('categories.edit', $item->name) }}" wire:navigate class="text-green-600 hover:text-green-900">
                         Змінити
                     </a>
                     <button wire:click='delete("{{ $item->name }}")' class="ml-2 text-red-600 hover:text-red-900">
