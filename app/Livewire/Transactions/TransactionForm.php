@@ -11,7 +11,6 @@ class TransactionForm extends Component
     public $transaction_id;
     public $card_number;
     public $receiver;
-    public $experience;
     public $category_name;
     public $subscription_date;
 
@@ -27,7 +26,6 @@ class TransactionForm extends Component
             $this->transaction_id = $transaction->transaction_id;
             $this->card_number = $transaction->card_number;
             $this->receiver = $transaction->receiver;
-            $this->experience = $transaction->experience;
             $this->category_name = $transaction->category_name;
             $this->subscription_date = $transaction->subscription_date;
         }
@@ -39,7 +37,7 @@ class TransactionForm extends Component
             'transaction' => [
                 'transaction_id' => $this->transaction_id,
                 'card_number' => $this->card_number,
-                'experience' => $this->experience,
+                'subscription_date' => $this->subscription_date,
             ],
             'transaction_receiver' => [
                 'transaction_id' => $this->transaction_id,

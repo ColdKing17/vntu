@@ -58,7 +58,7 @@ Route::prefix('transactions')->name('transactions.')->group(function () {
 Route::prefix('subscriptions')->name('subscriptions.')->group(function () {
     Route::get('/', SubscriptionsIndex::class)->name('index');
     Route::get('create', SubscriptionCreate::class)->name('create');
-    Route::get('{date}/edit', SubscriptionEdit::class)->name('edit');
+    Route::get('{date}/{client_full_name}/edit', SubscriptionEdit::class)->name('edit');
 });
 
 Route::prefix('tickets')->name('tickets.')->group(function () {
