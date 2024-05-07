@@ -11,7 +11,9 @@ class ClientCreate extends Component
 
     public function create(array $data): void
     {
-        DB::table('clients')->insert($data['client']);
+        if (DB::table('clients')->where('full_name', $data['client']['full_name'])->doesntExist()) {
+            DB::table('clients')->insert($data['client']);
+        }
 
         if ($data['client_transaction_payment']['transaction_id'] && $data['client_transaction_payment']['payment_name']) {
             DB::table('client_transaction_payment')->insert($data['client_transaction_payment']);
