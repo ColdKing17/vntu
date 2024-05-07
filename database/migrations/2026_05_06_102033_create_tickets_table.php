@@ -19,7 +19,7 @@ return new class extends Migration
 
             $table->primary('date');
 
-            $table->foreign('payment_name')->references('name')->on('payments')->cascadeOnDelete();
+            $table->foreign('payment_name')->references('name')->on('payments')->cascadeOnUpdate()->cascadeOnDelete();
         });
     }
 

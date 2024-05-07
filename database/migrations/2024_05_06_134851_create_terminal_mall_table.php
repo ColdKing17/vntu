@@ -17,8 +17,8 @@ return new class extends Migration
 
             $table->primary(['terminal_internal_number', 'mall_address']);
 
-            $table->foreign('terminal_internal_number')->references('internal_number')->on('terminals')->cascadeOnDelete();
-            $table->foreign('mall_address')->references('address')->on('malls')->cascadeOnDelete();
+            $table->foreign('terminal_internal_number')->references('internal_number')->on('terminals')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreign('mall_address')->references('address')->on('malls')->cascadeOnUpdate()->cascadeOnDelete();
         });
     }
 

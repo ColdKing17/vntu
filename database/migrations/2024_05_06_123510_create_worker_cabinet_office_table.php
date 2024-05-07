@@ -18,9 +18,9 @@ return new class extends Migration
 
             $table->primary(['worker_full_name', 'cabinet_number', 'office_address']);
 
-            $table->foreign('worker_full_name')->references('full_name')->on('workers')->cascadeOnDelete();
-            $table->foreign('cabinet_number')->references('number')->on('cabinets')->cascadeOnDelete();
-            $table->foreign('office_address')->references('address')->on('offices')->cascadeOnDelete();
+            $table->foreign('worker_full_name')->references('full_name')->on('workers')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreign('cabinet_number')->references('number')->on('cabinets')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreign('office_address')->references('address')->on('offices')->cascadeOnUpdate()->cascadeOnDelete();
         });
     }
 

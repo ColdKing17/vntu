@@ -18,7 +18,7 @@ return new class extends Migration
 
             $table->primary('transaction_id');
 
-            $table->foreign('subscription_date')->references('date')->on('subscriptions')->cascadeOnDelete();
+            $table->foreign('subscription_date')->references('date')->on('subscriptions')->cascadeOnUpdate()->cascadeOnDelete();
         });
     }
 

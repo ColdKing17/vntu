@@ -17,8 +17,8 @@ return new class extends Migration
 
             $table->primary(['ticket_date', 'worker_full_name']);
 
-            $table->foreign('worker_full_name')->references('full_name')->on('workers')->cascadeOnDelete();
-            $table->foreign('ticket_date')->references('date')->on('tickets')->cascadeOnDelete();
+            $table->foreign('worker_full_name')->references('full_name')->on('workers')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreign('ticket_date')->references('date')->on('tickets')->cascadeOnUpdate()->cascadeOnDelete();
 
         });
     }

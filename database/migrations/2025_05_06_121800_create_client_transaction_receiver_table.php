@@ -17,7 +17,7 @@ return new class extends Migration
 
             $table->primary(['transaction_id', 'receiver']);
 
-            $table->foreign('transaction_id')->references('transaction_id')->on('transactions')->cascadeOnDelete();
+            $table->foreign('transaction_id')->references('transaction_id')->on('transactions')->cascadeOnUpdate()->cascadeOnDelete();
         });
     }
 

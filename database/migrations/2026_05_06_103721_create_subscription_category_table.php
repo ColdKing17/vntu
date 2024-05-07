@@ -17,8 +17,8 @@ return new class extends Migration
 
             $table->primary(['subscription_date']);
 
-            $table->foreign('subscription_date')->references('date')->on('subscriptions')->cascadeOnDelete();
-            $table->foreign('category_name')->references('name')->on('categories')->cascadeOnDelete();
+            $table->foreign('subscription_date')->references('date')->on('subscriptions')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreign('category_name')->references('name')->on('categories')->cascadeOnUpdate()->cascadeOnDelete();
         });
     }
 

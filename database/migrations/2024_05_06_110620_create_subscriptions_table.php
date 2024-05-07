@@ -20,7 +20,7 @@ return new class extends Migration
 
             $table->primary('date');
 
-            $table->foreign('currency_symbol')->references('symbol')->on('currencies')->cascadeOnDelete();
+            $table->foreign('currency_symbol')->references('symbol')->on('currencies')->cascadeOnUpdate()->cascadeOnDelete();
         });
     }
 

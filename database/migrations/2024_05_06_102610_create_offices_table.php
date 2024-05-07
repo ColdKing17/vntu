@@ -19,7 +19,7 @@ return new class extends Migration
 
             $table->primary('address');
 
-            $table->foreign('city_name')->references('name')->on('cities')->cascadeOnDelete();
+            $table->foreign('city_name')->references('name')->on('cities')->cascadeOnUpdate()->cascadeOnDelete();
         });
     }
 

@@ -18,9 +18,9 @@ return new class extends Migration
 
             $table->primary(['client_full_name', 'transaction_id', 'payment_name']);
 
-            $table->foreign('client_full_name')->references('full_name')->on('clients')->cascadeOnDelete();
-            $table->foreign('transaction_id')->references('transaction_id')->on('transactions')->cascadeOnDelete();
-            $table->foreign('payment_name')->references('name')->on('payments')->cascadeOnDelete();
+            $table->foreign('client_full_name')->references('full_name')->on('clients')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreign('transaction_id')->references('transaction_id')->on('transactions')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreign('payment_name')->references('name')->on('payments')->cascadeOnUpdate()->cascadeOnDelete();
 
         });
     }
