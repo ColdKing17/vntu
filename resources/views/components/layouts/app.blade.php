@@ -19,7 +19,7 @@
         <x-sidebar.desktop-sidebar />
         <x-sidebar.mobile-sidebar />
 
-        <main class="py-10 lg:pl-72 min-h-screen bg-gray-100">
+        <main class="py-10 lg:pl-72 min-h-screen">
             <div class="px-12 pt-12">
                 {{ $slot }}
             </div>
